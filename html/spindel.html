@@ -1,0 +1,63 @@
+<script src="http://spelprogrammering.nu/simple.js">
+    function Spindel(startX,startY,XSpeed,YSpeed){
+        this.x = startX;
+        this.y = startY;
+        this.XSpeed = XSpeed;
+        this.YSpeed = YSpeed;
+        if(random(2)==0){
+            this.XSpeed = XSpeed;
+        }else{
+            this.XSpeed = -XSpeed
+        }
+        if(random(2)==0){
+            this.YSpeed = YSpeed;
+        }else{
+            this.YSpeed = -YSpeed
+        }
+        this.update = function(){
+            this.x += this.XSpeed;
+            this.y += this.YSpeed;
+            
+
+           save();
+           translate(this.x,this.y);
+           circle(-75,110,50,"black");
+           rotate(60);
+           rectangle(65,120,5,100,"blue");
+           rotate(5);
+           rectangle(65,120,5,100,"blue");
+           rotate(35);
+           rectangle(130,-50,5,100,"blue");
+           rotate(20)
+           rectangle(139,-75,5,100,"blue");
+           restore();
+
+        }
+    }
+
+    
+    function start() {
+        spindlar = [];
+       
+
+        for(let i=0;i<100;i++) {
+        spindlar.push(new Spindel(totalWidth/2, totalHeight/2, 1+random(10), 1+random(10)));
+
+        }
+
+
+    }
+
+    function update(){
+        clearScreen();
+        for(let i=0;i<spindlar.length;i++) {
+        spindlar[i].update();
+  }
+    if(random(10)==0){        spindlar.push(new Spindel(totalWidth/2, totalHeight/2, 1+random(10), 1+random(10)));
+}
+
+      
+
+
+    }
+</script>

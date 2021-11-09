@@ -1,0 +1,41 @@
+<script src="http://spelprogrammering.nu/simple.js">
+    function start() {
+        ball ={x:0,y:0};
+        y=10
+        x=15
+
+    }
+        circle(700,100,50,"orange");
+        circle(50,200,50,"blue");
+        rectangle(200,300,50,"red");
+        
+        function update(){
+            clearScreen();
+            circle(ball.x,ball.y,50);
+            rectangle(ball.x,ball.y,50);
+
+        if(keyboard.left){ball.x-=50;}
+        if(keyboard.right){ball.x+=50;}
+        if(keyboard.down){ball.y+=50;}
+        if(keyboard.up){ball.y-=50;}
+        ball.x++
+        ball.y++        
+
+
+
+
+
+
+
+
+
+
+        }
+
+
+
+
+
+
+
+</script>

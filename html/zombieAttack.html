@@ -1,0 +1,58 @@
+<script src="http://spelprogrammering.nu/simple.js">
+    function Zombie(startX,startY,XSpeed){
+        this.x = startX;
+        this.y = startY;
+        this.XSpeed = XSpeed;
+
+        this.update = function(){
+            this.x += this.XSpeed;
+
+            save();
+           translate(this.x,this.y);
+           rectangle(3,110,23,65,"lightgreen");
+           rectangle(3,95,23,65,"grey");
+           rectangle(45,50,20,"lightgreen");
+           circle(15,80,20,"lightgreen");
+           circle(0,80,3,"red");
+           rectangle(-35,100,30,14,"lightgreen");
+           rectangle(-35,90,5,60,"black");
+           rectangle(25,90,20,65,"darkpurple");
+
+           rectangle(-20,170,65,10,"blue")
+           circle(-20,180,11,1,"black")
+           circle(40,180,11,1,"black")
+           rectangle(-60,87,30,14,"red");
+           rectangle(-20,100,30,14,"grey");
+           restore();
+
+
+        }
+    }
+    
+    function start() {
+        zombies = [];
+
+        for(let i=0;i<500;i++) {
+            
+            
+        }
+       
+       
+       
+       
+        zombies[0] = new Zombie(600,200,-1);
+        zombies[1] = new Zombie(600,400,-2);
+        zombies[2] = new Zombie(600,600,-1);
+
+    }
+
+    function update(){
+        clearScreen();
+        for(let i=0;i<zombies.length;i++) {
+        zombies[i].update();
+
+        }
+
+
+    }
+</script>
